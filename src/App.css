@@ -1,38 +1,462 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+.app-header {
+  background-color: #1a2b49;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.logo span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+/* Wallet connector */
+.wallet-connector {
+  background-color: #3c4d6d;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.connect-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.wallet-address {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+.wallet-balance {
+  font-weight: bold;
+}
+
+/* Search form */
+.search-form {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.search-form h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #1a2b49;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-button {
+  background-color: #00a699;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #008f86;
+}
+
+/* Flight results */
+.flight-results h2 {
+  margin-bottom: 20px;
+  color: #1a2b49;
+}
+
+.flight-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.flight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.airline {
+  display: flex;
+  align-items: center;
+}
+
+.airline img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.flight-price {
+  text-align: right;
+}
+
+.fiat-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a2b49;
+}
+
+.crypto-price {
+  color: #ff6b6b;
+  font-weight: 500;
+}
+
+.flight-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.flight-time {
+  text-align: center;
+  flex: 1;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a2b49;
+}
+
+.city {
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.airport {
+  color: #777;
+  font-size: 14px;
+}
+
+.flight-duration {
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.duration {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.flight-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #1a2b49;
+  border-radius: 50%;
+}
+
+.flight-line hr {
+  flex: 1;
+  height: 2px;
+  background-color: #1a2b49;
+  border: none;
+}
+
+.stops {
+  font-size: 14px;
+  color: #777;
+}
+
+.select-button {
+  width: 100%;
+  background-color: #00a699;
   color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.select-button:hover {
+  background-color: #008f86;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.select-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #777;
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #777;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.booking-modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 600px;
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #1a2b49;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #777;
+}
+
+.flight-summary, .payment-details {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.flight-summary h3, .payment-details h3 {
+  margin-top: 0;
+  color: #1a2b49;
+}
+
+.flight-route {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.flight-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #555;
+}
+
+.payment-method {
+  margin-bottom: 20px;
+}
+
+.payment-method label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.payment-method select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.payment-summary {
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.payment-row:last-child {
+  margin-bottom: 0;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.wallet-address {
+  font-size: 14px;
+  color: #555;
+}
+
+.modal-actions {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.cancel-button {
+  background-color: #f8f9fa;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .flight-details {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
+  
+  .flight-duration {
+    width: 100%;
+  }
+
+  .error-message {
+    color: red;
+    background-color: #ffe5e5;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid red;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
 }
