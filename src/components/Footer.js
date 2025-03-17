@@ -7,9 +7,9 @@ const Footer = ({ githubRepo }) => {
     <footer className="footer">
       <div className="container">
         <p>
-          Made with <span className="heart">❤️</span> by Ayush •{' '}
+          Made with <span className="heart">❤️</span> by Ritik •{' '}
           <a 
-            href={githubRepo || "https://github.com/yourusername/yourrepo"} 
+            href={githubRepo || "https://github.com/ritik4ever/crypto-travel"} 
             target="_blank" 
             rel="noopener noreferrer"
           >
