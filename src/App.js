@@ -7,6 +7,7 @@ import FlightResults from './components/FlightResults';
 import Header from './components/Header';
 import ConnectWallet from './components/ConnectWallet';
 import BookingModal from './components/BookingModal';
+import Footer from './components/Footer'; 
 import { mockFlightData } from './data/mockFlights';
 
 function App() {
@@ -234,6 +235,7 @@ function App() {
           onConfirm={handleBooking}
         />
       )}
+              <Footer githubRepo="https://github.com/ritik4ever/crypto-travel" />
     </div>
   );
 }
