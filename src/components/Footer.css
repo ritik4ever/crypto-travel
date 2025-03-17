@@ -1,1 +1,30 @@
+/* src/components/Footer.css */
+.footer {
+  background-color: #121827;
+  color: #a0aec0;
+  padding: 1rem 0;
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+}
 
+.heart {
+  color: #e53e3e;
+}
+
+.footer a {
+  color: #f472b6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #f9a8d4;
+  text-decoration: underline;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
